@@ -35,16 +35,26 @@ function hr_organizations_views_default_views() {
   $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
   $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
   $handler->display->display_options['fields']['name_field']['label'] = '';
+  $handler->display->display_options['fields']['name_field']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['name_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name_field']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name_field']['type'] = 'text_plain';
   $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
-  /* Field: Taxonomy term: Acronym */
+  /* Field: Field: Acronym */
   $handler->display->display_options['fields']['field_acronym']['id'] = 'field_acronym';
   $handler->display->display_options['fields']['field_acronym']['table'] = 'field_data_field_acronym';
   $handler->display->display_options['fields']['field_acronym']['field'] = 'field_acronym';
   $handler->display->display_options['fields']['field_acronym']['label'] = '';
   $handler->display->display_options['fields']['field_acronym']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_acronym']['alter']['text'] = '[[field_acronym]]';
+  $handler->display->display_options['fields']['field_acronym']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_acronym']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_acronym']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_acronym']['type'] = 'text_plain';
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -68,6 +78,7 @@ function hr_organizations_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['row_options']['separator'] = ' ';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['hr_organizations'] = array(
     t('Master'),

@@ -91,7 +91,7 @@ function hr_organizations_field_default_field_bases() {
           'view_name' => 'hr_organizations',
         ),
       ),
-      'profile2_private' => 0,
+      'profile2_private' => FALSE,
       'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
