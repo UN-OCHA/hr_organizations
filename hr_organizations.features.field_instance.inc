@@ -84,6 +84,47 @@ function hr_organizations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-hr_organization-field_organization_fts'
+  $field_instances['taxonomy_term-hr_organization-field_organization_fts'] = array(
+    'bundle' => 'hr_organization',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_organization_fts',
+    'label' => 'FTS ID',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-hr_organization-field_organization_type'
   $field_instances['taxonomy_term-hr_organization-field_organization_type'] = array(
     'bundle' => 'hr_organization',
@@ -287,6 +328,7 @@ function hr_organizations_field_default_field_instances() {
   t('Acronym');
   t('Acronym of the organization');
   t('Description');
+  t('FTS ID');
   t('Name');
   t('Type');
   t('Website');
