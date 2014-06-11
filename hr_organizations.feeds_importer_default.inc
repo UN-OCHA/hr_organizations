@@ -150,6 +150,11 @@ function hr_organizations_feeds_importer_default() {
             'target' => 'parent',
             'unique' => FALSE,
           ),
+          9 => array(
+            'source' => 'Website',
+            'target' => 'field_website:url',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
