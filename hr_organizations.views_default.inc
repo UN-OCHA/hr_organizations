@@ -80,6 +80,103 @@ function hr_organizations_views_default_views() {
   $handler->display->display_options['row_options']['separator'] = ' ';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'name_field' => 'name_field',
+    'field_acronym' => 'field_acronym',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'name_field' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_acronym' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
+  $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['name_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name_field']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name_field']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
+  /* Field: Field: Acronym */
+  $handler->display->display_options['fields']['field_acronym']['id'] = 'field_acronym';
+  $handler->display->display_options['fields']['field_acronym']['table'] = 'field_data_field_acronym';
+  $handler->display->display_options['fields']['field_acronym']['field'] = 'field_acronym';
+  $handler->display->display_options['fields']['field_acronym']['alter']['text'] = '[[field_acronym]]';
+  $handler->display->display_options['fields']['field_acronym']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_acronym']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_acronym']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_acronym']['type'] = 'text_plain';
+  /* Field: Field: Website */
+  $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
+  $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
+  $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
+  $handler->display->display_options['fields']['field_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_website']['type'] = 'link_url';
+  $handler->display->display_options['path'] = 'organizations';
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'CSV', 'csv');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
+  $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['name_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name_field']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name_field']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
+  /* Field: Field: Acronym */
+  $handler->display->display_options['fields']['field_acronym']['id'] = 'field_acronym';
+  $handler->display->display_options['fields']['field_acronym']['table'] = 'field_data_field_acronym';
+  $handler->display->display_options['fields']['field_acronym']['field'] = 'field_acronym';
+  $handler->display->display_options['fields']['field_acronym']['alter']['text'] = '[[field_acronym]]';
+  $handler->display->display_options['fields']['field_acronym']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_acronym']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_acronym']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_acronym']['type'] = 'text_plain';
+  /* Field: Field: Website */
+  $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
+  $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
+  $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
+  $handler->display->display_options['fields']['field_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_website']['type'] = 'link_plain';
+  $handler->display->display_options['path'] = 'organizations/csv';
+  $handler->display->display_options['displays'] = array(
+    'page_1' => 'page_1',
+    'default' => 0,
+  );
   $translatables['hr_organizations'] = array(
     t('Master'),
     t('more'),
@@ -97,6 +194,11 @@ function hr_organizations_views_default_views() {
     t('last »'),
     t('[[field_acronym]]'),
     t('Entity Reference'),
+    t('Page'),
+    t('Name'),
+    t('Acronym'),
+    t('Website'),
+    t('Data export'),
   );
   $export['hr_organizations'] = $view;
 
